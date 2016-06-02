@@ -2,4 +2,4 @@
 mkdir -p /app/log
 	
 sudo rsync --delete-before --verbose --archive --exclude ".*" /app/serverTemp/ /app/server/ > /app/log/deploy.log
-sudo export "NETCORE_SERVER.URLS=http://unix:/app/server/kestrel.sock
+sudo export NETCORE_SERVER.URLS=http://unix:/app/server/kestrel.sock
