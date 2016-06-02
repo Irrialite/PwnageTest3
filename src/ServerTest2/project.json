@@ -24,7 +24,8 @@
 	"Serilog.Sinks.Literate": "2.0.0-rc-25",
 	"System.Collections.Specialized" : "4.0.1-rc2-24027",
 	"Microsoft.AspNetCore.Mvc" : "1.0.0-rc2-final",
-	"NetworkBase" : "1.0.0-*",
+    "NetworkBase": "1.0.0-*",
+    "Microsoft.Extensions.Configuration.CommandLine": "1.0.0-rc2-final",
   },
 
   "frameworks": {
@@ -40,8 +41,4 @@
     ]
   },
   "userSecretsId": "aspnet-ServerTest2-20160526105257",
-  
-  "commands": {
-    "web": "Microsoft.AspNetCore.Server.Kestrel --server.urls http://unix:/app/server/kestrel.sock",
-  },
 }
