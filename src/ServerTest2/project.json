@@ -40,4 +40,7 @@
     ]
   },
   "userSecretsId": "aspnet-ServerTest2-20160526105257",
+  
+  "commands": {
+    "web": "Microsoft.AspNetCore.Server.Kestrel --server.urls http://unix:/app/server/kestrel.sock",
 }
