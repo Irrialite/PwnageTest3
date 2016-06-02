@@ -43,4 +43,5 @@
   
   "commands": {
     "web": "Microsoft.AspNetCore.Server.Kestrel --server.urls http://unix:/app/server/kestrel.sock",
+  },
 }
