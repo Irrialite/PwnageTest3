@@ -37,7 +37,8 @@
   "publishOptions": {
     "include": [
       "config.json",
-      "globalconfig.json"
+      "globalconfig.json",
+	  "hosting.json"
     ]
   },
   "userSecretsId": "aspnet-ServerTest2-20160526105257",
