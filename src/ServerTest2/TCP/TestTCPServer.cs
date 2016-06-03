@@ -28,7 +28,7 @@ namespace ServerTest2.TCP
 
         protected override async Task OnMessageReceived(GameEvent ev, Socket s)
         {
-            Console.WriteLine($"Received {ev.ID} with data {ev.GetData<object>()}");
+            m_Logger.LogInformation($"Received {ev.ID} with data {ev.GetData<object>()}");
             await Task.Delay(1000);
             await s.SendEventAsync(new GameEvent(EGameEventID.BetSet, null, null));
         }
