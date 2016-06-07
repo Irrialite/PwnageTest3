@@ -30,7 +30,8 @@ namespace ServerTest2.Controllers
         public IActionResult RequestGame(string game)
         {
             int gameId;
-            if (string.IsNullOrEmpty("game") || !int.TryParse(game, out gameId))
+            int id;
+            if (string.IsNullOrEmpty("game") || !int.TryParse(game, out gameId) || (id = m_TCPServerManager.GetNewInstanceForGame(gameId)) == -1)
             {
                 return new JsonResult(new
                 {
@@ -38,11 +39,22 @@ namespace ServerTest2.Controllers
                 });
             }
 
-            m_TCPServerManager.RegisterTCPServer(new TestTCPServer(gameId, 1, m_Logger));
+            m_TCPServerManager.RegisterTCPServer(new TestTCPServer(gameId, id, m_Logger));
             return new JsonResult(new GameInstanceCreated()
             {
                 game = gameId,
-                id = 1,
+                id = id,
+            });
+        }
+
+        [HttpGet("GetServerList")]
+        public IActionResult GetServerList()
+        {
+            var servers = m_TCPServerManager.GetServerList();
+
+            return new JsonResult(new
+            {
+                servers = servers.Select(x => new int[2] { x.GameID, x.InstanceID }).ToArray(),
             });
         }
     }

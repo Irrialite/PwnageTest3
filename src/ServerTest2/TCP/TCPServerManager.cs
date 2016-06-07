@@ -23,6 +23,13 @@ namespace ServerTest2.TCP
         private readonly TcpListener m_TCPListener;
         private readonly ILogger<TCPServerManager> m_Logger;
 
+        private int[] m_InstanceIDs = new int[8];
+
+        #region Locks
+        private readonly object m_RegisterServerLock = new object();
+        private readonly object m_GetInstanceLock = new object();
+        #endregion Locks
+
         public TCPServerManager(ILogger<TCPServerManager> logger)
         {
             m_Logger = logger;
@@ -35,10 +42,21 @@ namespace ServerTest2.TCP
 
         public void RegisterTCPServer(ITCPServer server)
         {
-            m_Servers.Add(server);
+            lock (m_RegisterServerLock)
+            {
+                m_Servers.Add(server);
 
-            Debug.Assert(!m_Handlers.ContainsKey(server.Path), "Server map already contains " + server.Path);
-            m_Handlers[server.Path] = server;
+                Debug.Assert(!m_Handlers.ContainsKey(server.Path), "Server map already contains " + server.Path);
+                m_Handlers[server.Path] = server;
+            }
+        }
+
+        public ITCPServer[] GetServerList()
+        {
+            lock (m_RegisterServerLock)
+            {
+                return m_Servers.ToArray();
+            }
         }
 
         public bool GetTCPServerForPath(string path, out ITCPServer server)
@@ -49,6 +67,19 @@ namespace ServerTest2.TCP
         public bool GetTCPServerForGame(int gameID, int instanceID, out ITCPServer server)
         {
             return m_Handlers.TryGetValue($"/{gameID}/{instanceID}", out server);
+        }
+
+        public int GetNewInstanceForGame(int gameID)
+        {
+            lock (m_GetInstanceLock)
+            {
+                if (gameID < 0 || gameID >= m_InstanceIDs.Length)
+                {
+                    return -1;
+                }
+
+                return m_InstanceIDs[gameID]++;
+            }
         }
 
         private async Task ReceiveHandshakeTask(Socket client)
