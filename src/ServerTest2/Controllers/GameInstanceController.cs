@@ -52,7 +52,7 @@ namespace ServerTest2.Controllers
         {
             var servers = m_TCPServerManager.GetServerList();
 
-            return new JsonResult(new
+            return new JsonResult(new GameServerList()
             {
                 servers = servers.Select(x => new int[2] { x.GameID, x.InstanceID }).ToArray(),
             });

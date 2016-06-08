@@ -18,6 +18,7 @@ namespace ServerTest2.TCP
 
         protected override async Task OnConnected(Socket s)
         {
+            m_Logger.LogInformation($"Client {s.RemoteEndPoint} connected to {Path}.");
             await s.SendEventAsync(new GameEvent(EGameEventID.Handshake, null, null));
         }
 
