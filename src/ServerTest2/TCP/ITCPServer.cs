@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
-using NetworkBase;
+using NetworkBase.Extensions;
 using NetworkBase.Collections;
 using NetworkBase.Events;
 using System;

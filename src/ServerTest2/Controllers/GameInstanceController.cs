@@ -44,6 +44,7 @@ namespace ServerTest2.Controllers
             {
                 game = gameId,
                 id = id,
+                slots = new Random().Next(1, 8),
             });
         }
 

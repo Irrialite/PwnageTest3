@@ -9,7 +9,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using NetworkBase;
+using NetworkBase.Extensions;
 using NetworkBase.Events;
 using NetworkBase.Collections;
 using NetworkBase.Events.Args;

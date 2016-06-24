@@ -5,7 +5,7 @@ using System.Net.Sockets;
 using System.Net.WebSockets;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using NetworkBase;
+using NetworkBase.Extensions;
 using NetworkBase.Events;
 
 namespace ServerTest2.TCP

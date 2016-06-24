@@ -14,6 +14,10 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ServerTest2", "src\ServerTe
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "NetworkBase", "..\NetworkBase\src\NetworkBase\NetworkBase.xproj", "{1059763A-64B0-4727-B1D2-FC1837B540BA}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Microsoft.Extensions.Caching.Abstractions", "..\NetworkBase\src\Microsoft.Extensions.Caching.Abstractions\Microsoft.Extensions.Caching.Abstractions.xproj", "{60AAD8D1-33A3-4943-A4AF-C8A5BA418BC6}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Microsoft.Extensions.Caching.Redis", "..\NetworkBase\src\Microsoft.Extensions.Caching.Redis\Microsoft.Extensions.Caching.Redis.xproj", "{02E23070-947C-4438-8E50-CC2456D237BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +32,14 @@ Global
 		{1059763A-64B0-4727-B1D2-FC1837B540BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1059763A-64B0-4727-B1D2-FC1837B540BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1059763A-64B0-4727-B1D2-FC1837B540BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60AAD8D1-33A3-4943-A4AF-C8A5BA418BC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60AAD8D1-33A3-4943-A4AF-C8A5BA418BC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60AAD8D1-33A3-4943-A4AF-C8A5BA418BC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60AAD8D1-33A3-4943-A4AF-C8A5BA418BC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02E23070-947C-4438-8E50-CC2456D237BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02E23070-947C-4438-8E50-CC2456D237BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02E23070-947C-4438-8E50-CC2456D237BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02E23070-947C-4438-8E50-CC2456D237BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
