@@ -6,8 +6,9 @@ using System.Linq;
 using System.Net.WebSockets;
 using System.Text;
 using System.Threading.Tasks;
+using TCPServerBase.WebSockets;
 
-namespace ServerTest2
+namespace ServerTest2.WebSockets
 {
     public class TestWebSocketServer : IWebSocketServer
     {

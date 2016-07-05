@@ -6,13 +6,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using NetworkBase.Events.Args;
+using TCPServerBase.TCP;
 
 namespace ServerTest2.Controllers
 {
     [Route("api/[controller]")]
     public sealed class GameInstanceController : ControllerBase
     {
-        private readonly TCP.TCPServerManager m_TCPServerManager;
+        private readonly TCPServerManager m_TCPServerManager;
         private readonly ILogger<GameInstanceController> m_Logger;
 
         public GameInstanceController(TCPServerManager serverManager, ILogger<GameInstanceController> logger)
@@ -45,6 +46,7 @@ namespace ServerTest2.Controllers
                 game = gameId,
                 id = id,
                 slots = new Random().Next(1, 8),
+                secret = new Random().NextDouble().GetHashCode()
             });
         }
 

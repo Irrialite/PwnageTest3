@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A673A67F-09D0-43C5-BB35-9B8E4EEC1342}"
 EndProject
@@ -12,11 +12,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ServerTest2", "src\ServerTest2\ServerTest2.xproj", "{07C10113-E3BA-47D1-9ED6-16C60F82B56B}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "NetworkBase", "..\NetworkBase\src\NetworkBase\NetworkBase.xproj", "{1059763A-64B0-4727-B1D2-FC1837B540BA}"
-EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Microsoft.Extensions.Caching.Abstractions", "..\NetworkBase\src\Microsoft.Extensions.Caching.Abstractions\Microsoft.Extensions.Caching.Abstractions.xproj", "{60AAD8D1-33A3-4943-A4AF-C8A5BA418BC6}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Microsoft.Extensions.Caching.Redis", "..\NetworkBase\src\Microsoft.Extensions.Caching.Redis\Microsoft.Extensions.Caching.Redis.xproj", "{02E23070-947C-4438-8E50-CC2456D237BA}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "NetworkBase", "..\NetworkBase\src\NetworkBase\NetworkBase.xproj", "{1059763A-64B0-4727-B1D2-FC1837B540BA}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TCPServerBase", "..\NetworkBase\src\TCPServerBase\TCPServerBase.xproj", "{F9779595-37E4-46B4-8E91-39DDDB1CBF1E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,10 +30,6 @@ Global
 		{07C10113-E3BA-47D1-9ED6-16C60F82B56B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07C10113-E3BA-47D1-9ED6-16C60F82B56B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07C10113-E3BA-47D1-9ED6-16C60F82B56B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1059763A-64B0-4727-B1D2-FC1837B540BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1059763A-64B0-4727-B1D2-FC1837B540BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1059763A-64B0-4727-B1D2-FC1837B540BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1059763A-64B0-4727-B1D2-FC1837B540BA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{60AAD8D1-33A3-4943-A4AF-C8A5BA418BC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{60AAD8D1-33A3-4943-A4AF-C8A5BA418BC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60AAD8D1-33A3-4943-A4AF-C8A5BA418BC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -40,6 +38,14 @@ Global
 		{02E23070-947C-4438-8E50-CC2456D237BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02E23070-947C-4438-8E50-CC2456D237BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02E23070-947C-4438-8E50-CC2456D237BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1059763A-64B0-4727-B1D2-FC1837B540BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1059763A-64B0-4727-B1D2-FC1837B540BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1059763A-64B0-4727-B1D2-FC1837B540BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1059763A-64B0-4727-B1D2-FC1837B540BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9779595-37E4-46B4-8E91-39DDDB1CBF1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9779595-37E4-46B4-8E91-39DDDB1CBF1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9779595-37E4-46B4-8E91-39DDDB1CBF1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9779595-37E4-46B4-8E91-39DDDB1CBF1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

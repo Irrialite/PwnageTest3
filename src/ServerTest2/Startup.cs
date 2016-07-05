@@ -1,12 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.WebSockets;
 using Microsoft.AspNetCore.WebSockets.Server;
-using Microsoft.AspNetCore.WebSockets.Protocol;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Hosting;
@@ -14,7 +8,8 @@ using Microsoft.Extensions.Configuration;
 using Serilog;
 using Serilog.Sinks.RollingFile;
 using System.IO;
-using Microsoft.AspNetCore.Mvc;
+using TCPServerBase.WebSockets;
+using TCPServerBase.TCP;
 
 namespace ServerTest2
 {
@@ -56,15 +51,15 @@ namespace ServerTest2
 
             //app.UseWebSockets();
             app.UseMiddleware<WebSocketMiddleware>();
-            app.UseMiddleware<WebSockets.WebSocketMiddlewareImpl>();
+            app.UseMiddleware<WebSocketMiddlewareImpl>();
             app.UseMvc();
         }
 
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddSingleton<WebSockets.WebSocketServerManager>();
-            services.AddSingleton<TCP.TCPServerManager>();
+            services.AddSingleton<WebSocketServerManager>();
+            services.AddSingleton<TCPServerManager>();
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using NetworkBase.Extensions;
 using NetworkBase.Events;
+using TCPServerBase.TCP;
 
 namespace ServerTest2.TCP
 {
